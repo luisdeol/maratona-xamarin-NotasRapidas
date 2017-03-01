@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 using Xamarin.Forms;
 
 namespace NotasRapidas
@@ -13,7 +9,7 @@ namespace NotasRapidas
         {
             InitializeComponent();
 
-            MainPage = new NotasRapidas.MainPage();
+            MainPage = new NotasRapidas.View.MainPage();
         }
 
         protected override void OnStart()

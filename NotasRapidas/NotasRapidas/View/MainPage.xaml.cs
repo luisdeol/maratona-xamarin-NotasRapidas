@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NotasRapidas.ViewModel;
 using Xamarin.Forms;
 
-namespace NotasRapidas
+namespace NotasRapidas.View
 {
     public partial class MainPage : ContentPage
     {
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new NotasViewModel();
         }
     }
 }
