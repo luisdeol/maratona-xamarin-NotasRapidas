@@ -34,7 +34,7 @@ namespace NotasRapidas.ViewModel
             {
                 IsBusy = true;
                 await Task.Delay(3000);
-                var notasDirectory = NotasService.LoadNotas();
+                var notasDirectory = await NotasService.LoadNotas();
                 foreach (var nota in notasDirectory.Notas)
                     Notas.Add(nota);
                 IsBusy = false;
