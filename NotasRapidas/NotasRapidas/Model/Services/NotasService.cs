@@ -2,7 +2,6 @@
 using NotasRapidas.Model.Entities;
 using NotasRapidas.Storage;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -14,28 +13,21 @@ namespace NotasRapidas.Model.Services
     {
         protected static string BaseUrl { get; set; } = "http://notasrapidasapi.azurewebsites.net/api/notas";
 
-        public static async Task<NotasDirectory> LoadNotas()
+        public static NotasDirectory LoadNotas()
         {
             var dbManager = new DatabaseManager();
-            //var notas = new ObservableCollection<Nota>(dbManager.GetItems());
-            var notas = new ObservableCollection<Nota>();
             var directory = new NotasDirectory();
-
-            //if (notas.Any())
-            //{
-            //    directory.Notas = notas;
-            //    return directory;
-            //}
-
-            var notasJson = await GetNotas();
-            foreach (var nota in notasJson)
+            foreach (var nota in dbManager.GetItems())
             {
-                dbManager.SaveItem(nota);
                 directory.Notas.Add(nota);
             }
-
-
             return directory;
+        }
+
+        public static void AddNota(Nota nota)
+        {
+            var dbManager = new DatabaseManager();
+            dbManager.SaveItem(nota);
         }
 
         protected static async Task<IEnumerable<Nota>> GetAsJson()

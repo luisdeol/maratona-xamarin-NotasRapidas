@@ -1,4 +1,5 @@
 ﻿
+using NotasRapidas.View;
 using Xamarin.Forms;
 
 namespace NotasRapidas
@@ -9,7 +10,7 @@ namespace NotasRapidas
         {
             InitializeComponent();
 
-            MainPage = new NotasRapidas.View.MainPage();
+            MainPage = new NavigationPage( new MainPage());
         }
 
         protected override void OnStart()

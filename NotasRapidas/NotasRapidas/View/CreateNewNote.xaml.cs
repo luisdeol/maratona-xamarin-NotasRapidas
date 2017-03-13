@@ -3,12 +3,12 @@ using Xamarin.Forms;
 
 namespace NotasRapidas.View
 {
-    public partial class MainPage : ContentPage
+    public partial class CreateNewNote : ContentPage
     {
-        public MainPage()
+        public CreateNewNote()
         {
             InitializeComponent();
-            BindingContext = new NotasViewModel(Navigation);
+            BindingContext = new CreateNoteViewModel(Navigation);
         }
     }
 }

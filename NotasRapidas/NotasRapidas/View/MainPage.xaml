@@ -5,6 +5,9 @@
              x:Class="NotasRapidas.View.MainPage">
   <StackLayout>
     <Button
+      Text="Añadir una Nota"
+      Command="{Binding NewNoteCommand}"/>
+    <Button
       Text="Cargar Notas"
       Command="{Binding LoadDirectoryCommand}"/>
     <ActivityIndicator
