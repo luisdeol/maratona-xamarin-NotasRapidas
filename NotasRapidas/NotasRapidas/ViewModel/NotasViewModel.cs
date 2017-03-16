@@ -2,6 +2,7 @@
 using NotasRapidas.Model.Services;
 using NotasRapidas.View;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace NotasRapidas.ViewModel
@@ -37,13 +38,13 @@ namespace NotasRapidas.ViewModel
         {
             await Navigation.PushModalAsync(new CreateNewNote());
         }
-        public void LoadDirectory()
+        public async void LoadDirectory()
         {
             if (!IsBusy)
             {
                 IsBusy = true;
-                //await Task.Delay(3000);
-                var notasDirectory = NotasService.LoadNotas();
+                await Task.Delay(3000);
+                var notasDirectory = await NotasService.LoadNotas();
                 foreach (var nota in notasDirectory.Notas)
                     Notas.Add(nota);
                 IsBusy = false;

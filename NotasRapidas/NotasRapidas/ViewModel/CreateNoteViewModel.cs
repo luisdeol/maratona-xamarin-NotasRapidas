@@ -9,16 +9,16 @@ namespace NotasRapidas.ViewModel
     {
         private readonly INavigation _navigation;
         public Command AddNoteCommand { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string Titulo { get; set; }
+        public string Descripcion { get; set; }
 
         public CreateNoteViewModel(INavigation navigation)
         {
             _navigation = navigation;
             AddNoteCommand = new Command(obj => AddNote(new Nota
             {
-                Description = Description,
-                Title = Title
+                Descripcion = Descripcion,
+                Titulo = Titulo
             }));
         }
 

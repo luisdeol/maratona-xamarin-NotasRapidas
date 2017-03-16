@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NotasRapidas.View.CreateNewNote">
   <StackLayout>
-    <Label Text="Title"></Label>
-    <Entry Text="{Binding Title}"></Entry>
-    <Label Text="Description"></Label>
-    <Entry Text="{Binding Description}"></Entry>
+    <Label Text="Titulo"></Label>
+    <Entry Text="{Binding Titulo}"></Entry>
+    <Label Text="Descripcion"></Label>
+    <Entry Text="{Binding Descripcion}"></Entry>
     <Button
       Text="Add Note"
       Command="{Binding AddNoteCommand}"></Button>

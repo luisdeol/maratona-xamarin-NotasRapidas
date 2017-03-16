@@ -1,37 +1,42 @@
-﻿using SQLite;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using SQLite;
 
 namespace NotasRapidas.Model.Entities
 {
+    [DataTable("Notas")]
     public class Nota : ObservableBaseObject
     {
 
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        [PrimaryKey]
+        public string Id { get; set; }
 
-        private string _title;
-        public string Title
+        private string _titulo;
+        public string Titulo
         {
-            get { return _title; }
+            get { return _titulo; }
             set
             {
-                _title = value;
+                _titulo = value;
                 OnPropertyChanged();
             }
         }
 
-        private string _description;
+        private string _descripcion;
 
-        public string Description
+        public string Descripcion
         {
-            get { return _description; }
-            set { _description = value;
+            get { return _descripcion; }
+            set { _descripcion = value;
                 OnPropertyChanged();
             }
         }
 
         public override string ToString()
         {
-            return Title;
+            return Titulo;
         }
+
+        [Version]
+        public string AzureVersion { get; set; }
     }
 }

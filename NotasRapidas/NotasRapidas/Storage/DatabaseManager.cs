@@ -22,7 +22,7 @@ namespace NotasRapidas.Storage
             return _database.Table<Nota>().ToList();
         }
 
-        public Nota GetItem(int id)
+        public Nota GetItem(string id)
         {
             return _database.Table<Nota>().FirstOrDefault(i => i.Id == id);
         }
